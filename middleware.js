@@ -1,0 +1,21 @@
+import express from 'express';
+
+const app = express();
+app.use(express.json())
+
+app.get("/", (req,res)=>{
+    res.send("Data");
+});
+
+app.post("/user" ,(req, res) =>{
+    console.log(req.body);
+    res.send("data is added");
+});
+app.put("/user-add" ,(req,res) =>{
+    cosole.log(req.body);
+    res.send("getting data");
+});
+
+app.listen(4000,() =>{
+    console.log("data get")
+});
