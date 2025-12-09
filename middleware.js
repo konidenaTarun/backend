@@ -12,7 +12,7 @@ app.post("/user" ,(req, res) =>{
     res.send("data is added");
 });
 app.put("/user-add" ,(req,res) =>{
-    cosole.log(req.body);
+    console.log(req.body);
     res.send("getting data");
 });
 
