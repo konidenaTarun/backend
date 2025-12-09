@@ -4,9 +4,8 @@ const app = express();
 app.use(express.json())
 
 app.get("/", (req,res)=>{
-    res.send("Data");
+    res.send("Data done");
 });
-
 app.post("/user" ,(req, res) =>{
     console.log(req.body);
     res.send("data is added");
@@ -19,8 +18,6 @@ app.delete("/user-delete" ,(req,res) =>{
     console.log(req.body);
     res.send("delete data");
 });
-
-
 app.listen(4000,() =>{
     console.log("data get")
 });
