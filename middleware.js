@@ -4,7 +4,7 @@ const app = express();
 app.use(express.json())
 
 app.get("/", (req,res)=>{
-    res.send("Data over");
+    res.send("Data mg");
 });
 app.post("/user" ,(req, res) =>{
     console.log(req.body);
