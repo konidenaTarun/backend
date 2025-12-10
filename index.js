@@ -15,15 +15,31 @@
 //     console.log(`server running at port ${7007}`)
 // }); 
 
-import express from 'express';
-const app= express();
-app.get('/users' ,(req,res) =>{
-    res.send("Heldgjm,vczdn");
-})
-app.get('/get-users' , (req,res) => {
-    res.send("Hello this is backend");
-})
-app.listen(7007 ,() =>{
-    console.log("server running at port 7007")
-});
+// import express from 'express';
+// const app= express();
+// app.get('/users' ,(req,res) =>{
+//     res.send("Heldgjm,vczdn");
+// })
+// app.get('/get-users' , (req,res) => {
+//     res.send("Hello this is backend");
+// })
+// app.listen(7007 ,() =>{
+//     console.log("server running at port 7007")
+// });
 
+import express from 'express';
+import router from './Router/StudentRouter.js';
+
+const app = express();
+app.use(express.json())
+
+app.get("/", (req,res)=>{
+    
+});
+app.post("/user" ,(req, res) =>{
+    
+    res.send("data is added");
+});
+app.listen(4000,() =>{
+    console.log("data get")
+});
