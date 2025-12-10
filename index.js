@@ -33,10 +33,9 @@ import router from './Router/StudentRouter.js';
 const app = express();
 app.use(express.json())
 
-app.get("/", (req,res)=>{
-    
-});
-app.post("/user" ,(req, res) =>{
+app.use('/' , router);
+
+app.get("/user" ,(req, res) =>{
     
     res.send("data is added");
 });
