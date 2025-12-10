@@ -10,4 +10,5 @@ const getStudents= (req,res) =>{
 const addstudents=(req ,res) => {
     res.status(201) .json ({message : "data added" });
 };
+
 export {getStudents , addstudents};
