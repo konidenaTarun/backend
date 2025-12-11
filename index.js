@@ -37,8 +37,8 @@ app.use('/' , router);
 
 app.get("/user" ,(req, res) =>{
     
-    res.send("data is added");
+    res.send("data is addedjyum");
 });
 app.listen(4000,() =>{
-    console.log("data get")
+    console.log("dat")
 });
