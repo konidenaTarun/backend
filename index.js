@@ -29,16 +29,20 @@
 
 import express from 'express';
 import router from './Router/StudentRouter.js';
+import cors from 'cors';
+
 
 const app = express();
-app.use(express.json())
+app.use(express.json());
+app.use(cors());
 
 app.use('/' , router);
 
 app.get("/user" ,(req, res) =>{
-    
-    res.send("data is addedjyum");
+    res.send("data is added");
 });
+
+
 app.listen(4000,() =>{
-    console.log("dat")
+    console.log("data get")
 });
