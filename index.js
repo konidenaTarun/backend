@@ -39,7 +39,7 @@ app.use(cors());
 app.use('/' , router);
 
 app.get("/user" ,(req, res) =>{
-    res.send("data is added");
+    res.send("data is add");
 });
 
 
