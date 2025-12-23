@@ -11,6 +11,9 @@ const studentschema = new mongoose.Schema({
     },
     studentEmail : {
         type : String
+    },
+    studentFGender : {
+        type:String
     }
 })
 const student= mongoose.model("student",studentschema);
