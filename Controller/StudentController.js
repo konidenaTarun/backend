@@ -11,7 +11,7 @@ const addStudents = async(req, res) => {
     {
         const datas = req.body;
         console.log(datas);
-        const addeddatas = await student.create(data);
+        // const addeddatas = await student.create(data);
         const addeddatas = await student.insertMany(datas);
 
         console.log(addeddatas);
