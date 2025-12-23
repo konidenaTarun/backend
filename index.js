@@ -28,8 +28,15 @@
 // });
 
 import express from 'express';
+import mongoose from 'mongoose';
 import router from './Router/StudentRouter.js';
 import cors from 'cors';
+
+mongoose.connect("mongodb://localhost:27017/").then(()=> console.log("DB Connected"))
+.catch(error => console.log(error));
+
+
+
 
 
 const app = express();

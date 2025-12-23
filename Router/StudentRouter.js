@@ -1,6 +1,6 @@
 import express from'express';
-import { getStudents,addstudents } from '../Controller/StudentController.js';
+import { getStudentsDetails,addStudents } from '../Controller/StudentController.js';
 const router = express.Router();
-router.get('/get-data-student' ,getStudents);
-router.post('/add-student' ,addstudents);
+router.get('/get-data-student' ,getStudentsDetails);
+router.post('/add-student' ,addStudents);
 export default router;
