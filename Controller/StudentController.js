@@ -2,7 +2,7 @@ import student from "../models/studentmodels.js";
 const getStudentsDetails=(req,res) => {
     const mydata= {
         name : "Tarun",
-        roll : "1234"
+        roll : "4567"
     };
     res.send(mydata);
 };
