@@ -14,7 +14,11 @@ const studentschema = new mongoose.Schema({
     },
     studentFGender : {
         type:String
+    },
+    studentaddress : {
+        type : String
     }
+    
 })
 const student= mongoose.model("student",studentschema);
 export default student;
