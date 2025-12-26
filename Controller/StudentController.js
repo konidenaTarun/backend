@@ -15,7 +15,8 @@ const addStudents = async(req, res) => {
         const addeddatas = await student.insertMany(datas);
 
         console.log(addeddatas);
-        res.status(201).json("Added data");
+        res.status(201).json("Added");
+
     } catch(error) {
         res.status(500).json({error : error.messages})
     }
