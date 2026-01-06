@@ -51,10 +51,6 @@
 
 // // export {getStudents , addstudents};
 
-
-
-
-
 import student from "../models/studentsModels.js";
 
 const getStudentsDetails = async(req, res) => {
