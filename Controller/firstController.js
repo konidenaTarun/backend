@@ -8,7 +8,7 @@ const getStudents= (req,res) =>{
 };
 
 const addstudents=(req ,res) => {
-    res.send("Data is added");
+    res.send("Data is add");
 
     res.status(201) .json ({message : "data" });
 };
