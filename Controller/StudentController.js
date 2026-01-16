@@ -120,7 +120,7 @@ const updateStudentsStatus = async (req, res) => {
             {status: false},
             {$set: {status: true}}
         );
-        res.status(200).json({message: "status updated"});
+        res.status(200).json({message: "Updated status"});
     }catch(error){
         res.status(500).json({error: error.message});
     }
