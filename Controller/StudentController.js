@@ -1,128 +1,128 @@
-// import student from "../models/studentmodels.js";
-// const getStudentsDetails=(req,res) => {
-//     const mydata= {
-//         name : "Tarun",
-//         roll : "4567"
-//     };
-//     res.send(mydata);
-// };
-// const addStudents = async(req, res) => {
-//     try
-//     {
-//         const datas = req.body;
-//         console.log(datas);
-//         // const addeddatas = await student.create(data);
-//         // const addeddatas = await student.insertMany(datas);
-//         const addeddatas = await findByIdAndUpdate({_id: id}, data,{new:true})
-//             if(!addeddatas){
-//                 return res.status(404).json({message: "User not existed"});
-//             }
+// // import student from "../models/studentmodels.js";
+// // const getStudentsDetails=(req,res) => {
+// //     const mydata= {
+// //         name : "Tarun",
+// //         roll : "4567"
+// //     };
+// //     res.send(mydata);
+// // };
+// // const addStudents = async(req, res) => {
+// //     try
+// //     {
+// //         const datas = req.body;
+// //         console.log(datas);
+// //         // const addeddatas = await student.create(data);
+// //         // const addeddatas = await student.insertMany(datas);
+// //         const addeddatas = await findByIdAndUpdate({_id: id}, data,{new:true})
+// //             if(!addeddatas){
+// //                 return res.status(404).json({message: "User not existed"});
+// //             }
         
 
-//         console.log(addeddatas);
-//         res.status(201).json("Added");
+// //         console.log(addeddatas);
+// //         res.status(201).json("Added");
 
-//     } catch(error) {
-//         res.status(500).json({error : error.messages})
+// //     } catch(error) {
+// //         res.status(500).json({error : error.messages})
+// //     }
+// // };
+// // export {getStudentsDetails, addStudents};
+
+
+
+
+
+
+
+// // // const getStudents= (req,res) =>{
+// // //     let stdData= 
+// // //     {
+// // //         "name" : "Tarun",
+// // //         "Roll" :"1234"
+// // //     };
+// // //     res.status(200).json({data : stdData});
+// // // };
+
+// // // const addstudents=(req ,res) => {
+// // //     res.send("Data is added");
+
+// // //     res.status(201) .json ({message : "data" });
+// // // };
+
+// // // export {getStudents , addstudents};
+
+// import student from "../models/studentsModels.js";
+
+// const getStudentsDetails = async(req, res) => {
+//     try{
+//         const mydata = await student.find();
+//         res.status(200).json(mydata);
+//     }catch(error){
+//         console.log(error);
+//         res.status(500).json({error: error.message})
+//     }
+
+// };
+// const addStudents = async(req, res) => {
+//     try{
+//          const data = req.body;
+//     console.log(data);
+//     // const addeddata = await student.create(data);
+//     const addeddata = await student.insertMany(data);
+//     console.log(addeddata);
+//     res.status(201).json("data added");
+//     }catch(error){
+//         res.status(500).json({error: error.message})
 //     }
 // };
-// export {getStudentsDetails, addStudents};
+// const getStudentById = async (req, res) => {
+//     try{
+//         const id = req.params.userid;
+//         console.log("id :", id)
+//         const data = await student.findById({_id: id});
+//         console.log(data);
+//         res.status(200).json(data);
+//     }catch(error){
+//         res.status(500).json({error: error.message})
+//     }
+// };
+// // This is for testing 👀⁉️
+// const getStudentsDetailsWithFilters = async(req, res) => {
+//     try{
+//         const {stdBranch, stdCollege, stdCgpa} = req.query;
+//         console.log("stdBranch :", stdBranch);
+//         console.log("stdCollege :", stdCollege);
+//         console.log("stdCgpa :", stdCgpa);
+//         res.status(200).json("success");
+//     }catch(error){
+//         res.status(500).json({error: error.message})
+//     }
 
+// }
+// const updateStudents = async(req, res) => {
+//     try{
+//         const {id} = req.params;
+//         const data = req.body;
+//         // const updatedData = await student.findOneAndUpdate({stdRoll:id},data);
+//         const updatedData = await student.findByIdAndUpdate({_id: id}, data, {new:true})
+//         if(!updatedData){
+//             return res.status(404).json({message: "user not existed"});
+//         }
+//         res.status(200).json({student: updatedData, message: "student Updated"})
+//     }catch(error){
+//         res.status(500).json({error: error.message});
+//     }
 
-
-
-
-
-
-// // const getStudents= (req,res) =>{
-// //     let stdData= 
-// //     {
-// //         "name" : "Tarun",
-// //         "Roll" :"1234"
-// //     };
-// //     res.status(200).json({data : stdData});
-// // };
-
-// // const addstudents=(req ,res) => {
-// //     res.send("Data is added");
-
-// //     res.status(201) .json ({message : "data" });
-// // };
-
-// // export {getStudents , addstudents};
-
-import student from "../models/studentsModels.js";
-
-const getStudentsDetails = async(req, res) => {
-    try{
-        const mydata = await student.find();
-        res.status(200).json(mydata);
-    }catch(error){
-        console.log(error);
-        res.status(500).json({error: error.message})
-    }
-
-};
-const addStudents = async(req, res) => {
-    try{
-         const data = req.body;
-    console.log(data);
-    // const addeddata = await student.create(data);
-    const addeddata = await student.insertMany(data);
-    console.log(addeddata);
-    res.status(201).json("data added");
-    }catch(error){
-        res.status(500).json({error: error.message})
-    }
-};
-const getStudentById = async (req, res) => {
-    try{
-        const id = req.params.userid;
-        console.log("id :", id)
-        const data = await student.findById({_id: id});
-        console.log(data);
-        res.status(200).json(data);
-    }catch(error){
-        res.status(500).json({error: error.message})
-    }
-};
-// This is for testing 👀⁉️
-const getStudentsDetailsWithFilters = async(req, res) => {
-    try{
-        const {stdBranch, stdCollege, stdCgpa} = req.query;
-        console.log("stdBranch :", stdBranch);
-        console.log("stdCollege :", stdCollege);
-        console.log("stdCgpa :", stdCgpa);
-        res.status(200).json("success");
-    }catch(error){
-        res.status(500).json({error: error.message})
-    }
-
-}
-const updateStudents = async(req, res) => {
-    try{
-        const {id} = req.params;
-        const data = req.body;
-        // const updatedData = await student.findOneAndUpdate({stdRoll:id},data);
-        const updatedData = await student.findByIdAndUpdate({_id: id}, data, {new:true})
-        if(!updatedData){
-            return res.status(404).json({message: "user not existed"});
-        }
-        res.status(200).json({student: updatedData, message: "student Updated"})
-    }catch(error){
-        res.status(500).json({error: error.message});
-    }
-
-}
-const updateStudentsStatus = async (req, res) => {
-    try{
-        await student.updateMany(
-            {status: false},
-            {$set: {status: true}}
-        );
-        res.status(200).json({message: "Updated status"});
-    }catch(error){
-        res.status(500).json({error: error.message});
-    }
-}
-export {getStudentsDetails, addStudents, getStudentById, getStudentsDetailsWithFilters, updateStudents, updateStudentsStatus};
+// }
+// const updateStudentsStatus = async (req, res) => {
+//     try{
+//         await student.updateMany(
+//             {status: false},
+//             {$set: {status: true}}
+//         );
+//         res.status(200).json({message: "Updated status"});
+//     }catch(error){
+//         res.status(500).json({error: error.message});
+//     }
+// }
+// export {getStudentsDetails, addStudents, getStudentById, getStudentsDetailsWithFilters, updateStudents, updateStudentsStatus};
